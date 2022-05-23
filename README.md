@@ -1,3 +1,3 @@
 # Provisioning AWS EKS Cluster for Windows workloads
 
-![image](https://user-images.githubusercontent.com/42310282/169867195-e6bf701b-8f6d-4e62-bb0b-9ad92e72a928.png)
+![image](https://user-images.githubusercontent.com/42310282/169879256-5f50fbd1-bba4-45a3-8720-772b8f4b3db2.png)
