@@ -19,8 +19,8 @@ resource "aws_security_group" "worker_group_mgmt_two" {
   vpc_id      = module.vpc.vpc_id
 
   ingress {
-    from_port = 22
-    to_port   = 22
+    from_port = 3389
+    to_port   = 3389
     protocol  = "tcp"
 
     cidr_blocks = [
@@ -34,8 +34,8 @@ resource "aws_security_group" "all_worker_mgmt" {
   vpc_id      = module.vpc.vpc_id
 
   ingress {
-    from_port = 22
-    to_port   = 22
+    from_port = 3389
+    to_port   = 3389
     protocol  = "tcp"
 
     cidr_blocks = [
