@@ -5,3 +5,14 @@
 ##
 
 ![image](https://user-images.githubusercontent.com/42310282/171080989-80c36557-604b-45ed-9447-2184aae4a5c4.png)
+
+##
+next steps:
+Change container runtime to containerd.
+
+##
+ref.:
+https://learn.hashicorp.com/tutorials/terraform/eks
+https://docs.aws.amazon.com/eks/latest/userguide/windows-support.html
+https://docs.aws.amazon.com/eks/latest/userguide/service_IAM_role.html
+https://docs.aws.amazon.com/eks/latest/userguide/sample-deployment.html
