@@ -10,9 +10,4 @@
 next steps:
 Change container runtime to containerd.
 
-##
-ref.:
-https://learn.hashicorp.com/tutorials/terraform/eks
-https://docs.aws.amazon.com/eks/latest/userguide/windows-support.html
-https://docs.aws.amazon.com/eks/latest/userguide/service_IAM_role.html
-https://docs.aws.amazon.com/eks/latest/userguide/sample-deployment.html
+
