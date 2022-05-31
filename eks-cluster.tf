@@ -10,8 +10,6 @@ module "eks" {
 
   workers_group_defaults = {
     root_volume_type = "gp2"
-    #key_pair_name   = "/home/mibre/terraform/aws/eks/tf-aws-eks-windows-container/windows.key"
-
 
   }
 
@@ -20,22 +18,33 @@ module "eks" {
       name                          = "windows-wg"
       instance_type                 = "t2.medium"
       additional_userdata           = "echo foo bar"
-      additional_security_group_ids = [aws_security_group.worker_group_mgmt_one.id]
+      #additional_security_group_ids = [aws_security_group.worker_group_mgmt_one.id]
       asg_desired_capacity          = 1
       platform                      = "windows"
-      key_name                      = "windows-key"
+      #key_name                      = "windows-key"
+
+      bootstrap_env = {
+        CONTAINER_RUNTIME = "containerd"
+        USE_MAX_PODS      = false
+      }
+
     },
     {
       name                          = "linux-wg"
       instance_type                 = "t2.small"
       additional_userdata           = "echo foo bar"
       additional_security_group_ids = [aws_security_group.worker_group_mgmt_two.id]
-      asg_desired_capacity          = 1
+      asg_desired_capacity          = 2
       platform                      = "linux"
-      #key_name                      = "/home/mibre/terraform/aws/eks/tf-aws-eks-windows-container/linux.key"
+            
+      bootstrap_env = {
+        CONTAINER_RUNTIME = "containerd"
+        USE_MAX_PODS      = false
+      }
     },
   ]   
 }
+
 
 data "aws_eks_cluster" "cluster" {
   name = module.eks.cluster_id
