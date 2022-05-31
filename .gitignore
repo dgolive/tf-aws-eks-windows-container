@@ -30,4 +30,4 @@ override.tf.json
 
 
 kubeconfig*
-windows/
+myfiles/
