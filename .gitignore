@@ -31,3 +31,5 @@ override.tf.json
 
 kubeconfig*
 myfiles/
+
+debug/

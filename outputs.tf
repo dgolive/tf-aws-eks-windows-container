@@ -32,3 +32,8 @@ output "cluster_name" {
   description = "Kubernetes Cluster Name"
   value       = local.cluster_name
 }
+
+output "cluster_role_name" {
+  description = "Cluster Role Name"
+  value       = module.eks.cluster_iam_role_name
+}
