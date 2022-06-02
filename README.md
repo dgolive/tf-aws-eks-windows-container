@@ -10,4 +10,4 @@
 next steps:
 Change container runtime to containerd.
 
-
+<img width="638" alt="image" src="https://user-images.githubusercontent.com/42310282/171542252-19ee85ef-cd67-4110-b6c5-bf27438d7334.png">
