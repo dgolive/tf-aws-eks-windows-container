@@ -15,19 +15,14 @@ module "eks" {
 
   worker_groups = [
     {
-      name                          = "windows-wg"
-      instance_type                 = "t2.medium"
-      additional_userdata           = "echo foo bar"
+      name                = "windows-wg"
+      instance_type       = "t2.medium"
+      additional_userdata = "echo foo bar"
       #additional_security_group_ids = [aws_security_group.worker_group_mgmt_one.id]
-      asg_desired_capacity          = 1
-      platform                      = "windows"
-      #key_name                      = "windows-key"
-
-      bootstrap_env = {
-        CONTAINER_RUNTIME = "containerd"
-        USE_MAX_PODS      = false
-      }
-
+      asg_desired_capacity = 1
+      platform             = "windows"
+      ami_id               = "ami-072d3ce2cff19f1c9"
+      bootstrap_extra_args = "--container-runtime containerd --EKSClusterName ${local.cluster_name}"
     },
     {
       name                          = "linux-wg"
@@ -36,13 +31,9 @@ module "eks" {
       additional_security_group_ids = [aws_security_group.worker_group_mgmt_two.id]
       asg_desired_capacity          = 2
       platform                      = "linux"
-            
-      bootstrap_env = {
-        CONTAINER_RUNTIME = "containerd"
-        USE_MAX_PODS      = false
-      }
+      bootstrap_extra_args          = "--container-runtime containerd --kubelet-extra-args '--max-pods=20'"
     },
-  ]   
+  ]
 }
 
 
